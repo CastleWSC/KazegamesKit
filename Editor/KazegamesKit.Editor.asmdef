@@ -1,0 +1,17 @@
+{
+    "name": "KazegamesKit.Editor",
+    "references": [
+        "GUID:f39b58d50ce82044c97e62b172f9ff2a"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
