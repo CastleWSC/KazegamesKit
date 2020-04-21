@@ -339,7 +339,7 @@ namespace KazegamesKit
             else
             {
                 LinkedListNode<T> fNode = _freeNodes;
-                while (fNode != null)
+                while (fNode.Next != null)
                     fNode = fNode.Next;
 
                 fNode.Next = node;
