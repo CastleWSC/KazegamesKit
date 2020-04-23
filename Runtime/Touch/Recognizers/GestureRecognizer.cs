@@ -78,7 +78,7 @@ namespace KazegamesKit.Touch
             if (_tracking == null)
                 _tracking = new Array<UTouch>(1);
             else
-                _tracking.Erase(0, _tracking.Length);
+                _tracking.Erase(0, _tracking.Length-1);
         }
 
         internal void Recognize(Array<UTouch> touches)

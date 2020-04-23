@@ -56,7 +56,7 @@ namespace KazegamesKit.Touch
                 for (int i = 0; i < _gestureRecognizers.Count; i++)
                     _gestureRecognizers[i].Recognize(_liveTouches);
 
-                _liveTouches.Erase(0, _liveTouches.Length);
+                _liveTouches.Erase(0, _liveTouches.Length-1);
             }
         }
 
