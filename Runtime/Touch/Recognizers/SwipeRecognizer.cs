@@ -92,7 +92,8 @@ namespace KazegamesKit.Touch
 
                 if(_tracking.Length > 0)
                 {
-                    _points.Erase(0, _points.Length-1);
+                    if(!_points.IsEmpty())
+                        _points.Erase(0, _points.Length-1);
                     _points.Push(touches[0].position);
 
                     _startTime = Time.time;

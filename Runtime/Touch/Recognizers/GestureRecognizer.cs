@@ -76,9 +76,14 @@ namespace KazegamesKit.Touch
         {
             _state = EState.Ready;
             if (_tracking == null)
+            {
                 _tracking = new Array<UTouch>(1);
+            }
             else
-                _tracking.Erase(0, _tracking.Length-1);
+            {
+                if(!_tracking.IsEmpty())
+                    _tracking.Erase(0, _tracking.Length - 1);
+            }
         }
 
         internal void Recognize(Array<UTouch> touches)
