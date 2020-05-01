@@ -5,7 +5,7 @@ namespace KazegamesKit.Touch
 {
     public class TapRecognizer : GestureRecognizer
     {
-        public event Action<TapRecognizer> onEvent;
+        public event Action<TapRecognizer> onRecognized;
 
         public int numOfTapsRequired = 1;
         public int numOfTouchesRequired = 1;
@@ -33,7 +33,7 @@ namespace KazegamesKit.Touch
 
         internal override void OnTriggerEvents()
         {
-            onEvent?.Invoke(this);
+            onRecognized?.Invoke(this);
         }
 
         internal override bool OnTouchBegan(Array<UTouch> touches)

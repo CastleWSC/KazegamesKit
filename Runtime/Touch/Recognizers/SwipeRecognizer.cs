@@ -16,7 +16,7 @@ namespace KazegamesKit.Touch
 
     public class SwipeRecognizer : GestureRecognizer
     {
-        public event Action<SwipeRecognizer> onEvent;
+        public event Action<SwipeRecognizer> onRecognized;
 
         private float _minDistanceCm;
         private float _screenPixelPerCm;
@@ -80,7 +80,7 @@ namespace KazegamesKit.Touch
 
         internal override void OnTriggerEvents()
         {
-            onEvent?.Invoke(this);
+            onRecognized?.Invoke(this);
         }
 
         internal override bool OnTouchBegan(Array<UTouch> touches)
@@ -94,6 +94,7 @@ namespace KazegamesKit.Touch
                 {
                     if(!_points.IsEmpty())
                         _points.Erase(0, _points.Length-1);
+                    
                     _points.Push(touches[0].position);
 
                     _startTime = Time.time;
