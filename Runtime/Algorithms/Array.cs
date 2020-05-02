@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ProjectWindowCallback;
 
 namespace KazegamesKit
 {
@@ -254,6 +255,34 @@ namespace KazegamesKit
                 {
                     act?.Invoke(_data[i]);
                 }
+            }
+        }
+
+        public void Shuffle()
+        {
+            int n = _len;
+            while(n>1)
+            {
+                n--;
+                int k = RandomEx.GetRange(0, n + 1);
+                T tmp = this[k];
+                this[k] = this[n];
+                this[n] = tmp;
+            }
+        }
+
+        public void Reverse()
+        {
+            int start = 0;
+            int end = _len-1;
+
+            while(end > start)
+            {
+                T tmp = this[start];
+                this[start] = this[end];
+                this[end] = tmp;
+                start++;
+                end--;
             }
         }
 

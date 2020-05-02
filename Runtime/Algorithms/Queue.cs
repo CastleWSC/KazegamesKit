@@ -5,45 +5,53 @@ namespace KazegamesKit
     public class Queue<T>
     {
 
-        private LinkedList<T> _list;
+        private Array<T> _array;
 
-        public int Size { get { return _list.Size; } }
+        public int Size { get { return _array.Length; } }
 
 
         public Queue()
         {
-            _list = new LinkedList<T>();
+            _array = new Array<T>(10);
+        }
+
+        public Queue(uint n)
+        {
+            _array = new Array<T>(n);
         }
 
         public bool IsEmpty()
         {
-            return _list.IsEmpty();
+            return _array.IsEmpty();
         }
 
         public void Clear()
         {
-            _list.Clear();
+            _array.Clear();
         }
 
         public void Push(T val)
         {
-            _list.PushBack(val);
+            _array.Push(val);
         }
 
         public T Pop()
         {
-            if (_list.IsEmpty())
+            if (_array.IsEmpty())
                 throw new InvalidOperationException("Queue is empty.");
 
-            return _list.PopFront();
+            T result = _array.Front();
+            _array.Erase(0);
+
+            return result;
         }
 
         public T Peek()
         {
-            if (_list.IsEmpty())
+            if (_array.IsEmpty())
                 throw new InvalidOperationException("Queue is empty.");
 
-            return _list.Front.Data;
+            return _array.Front();
         }
     }
 }

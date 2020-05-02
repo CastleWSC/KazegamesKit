@@ -4,29 +4,34 @@ namespace KazegamesKit
 {
     public class Stack<T>
     {
-        private LinkedList<T> _list;
+        private Array<T> _array;
 
-        public int Size { get { return _list.Size; } }
+        public int Size { get { return _array.Length; } }
 
 
         public Stack()
         {
-            _list = new LinkedList<T>();
+            _array = new Array<T>(10);
+        }
+
+        public Stack(uint n)
+        {
+            _array = new Array<T>(n);
         }
 
         public bool IsEmpty()
         {
-            return _list.IsEmpty();
+            return _array.IsEmpty();
         }
 
         public void Clear()
         {
-            _list.Clear();
+            _array.Clear();
         }
 
         public void Push(T val)
         {
-            _list.PushBack(val);
+            _array.Push(val);
         }
 
         public T Pop()
@@ -34,7 +39,7 @@ namespace KazegamesKit
             if (IsEmpty())
                 throw new InvalidOperationException("Stack is empty.");
 
-            return _list.PopBack();
+            return _array.Pop();
         }
 
         public T Peek()
@@ -42,7 +47,7 @@ namespace KazegamesKit
             if (IsEmpty())
                 throw new InvalidOperationException("Stack is empty.");
 
-            return _list.Back.Data;
+            return _array.Back();
         }
     }
 }
