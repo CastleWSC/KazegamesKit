@@ -2,6 +2,7 @@
 
 namespace KazegamesKit.Pool
 {
+    [AddComponentMenu("Kazegames Kit/PrefabPool Helper")]
     public class PrefabPoolHelper : MonoBehaviour
     {
         [SerializeField]
