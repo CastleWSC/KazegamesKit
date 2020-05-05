@@ -10,7 +10,7 @@ namespace KazegamesKit.Editor
         [MenuItem("Tools/Kazegames/Create Prototype Folders")]
         static void CreatePrototypeFolders()
         {
-            if(!AssetDatabase.IsValidFolder(Path.Combine(Application.dataPath, "_Prototype")))
+            if(!AssetDatabase.IsValidFolder("Assets/_Prototype"))
             {
                 string[] subFolders = new string[]
                 {
