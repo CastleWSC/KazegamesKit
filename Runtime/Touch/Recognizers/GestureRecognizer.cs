@@ -129,11 +129,11 @@ namespace KazegamesKit.Touch
             }
         }
 
-        internal abstract void OnTriggerEvents();
-        internal virtual bool OnTouchBegan(Array<UTouch> touches) { return false; }
-        internal virtual void OnTouchMoved(Array<UTouch> touches) { }
-        internal virtual void OnTouchStay(Array<UTouch> touches) { }
-        internal virtual void OnTouchEnded(Array<UTouch> touches) { }
+        public abstract void OnTriggerEvents();
+        public virtual bool OnTouchBegan(Array<UTouch> touches) { return false; }
+        public virtual void OnTouchMoved(Array<UTouch> touches) { }
+        public virtual void OnTouchStay(Array<UTouch> touches) { }
+        public virtual void OnTouchEnded(Array<UTouch> touches) { }
 
 
         public int CompareTo(GestureRecognizer other)

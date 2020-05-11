@@ -31,12 +31,12 @@ namespace KazegamesKit.Touch
             _maxDurationForTaps = maxDurationForTaps;
         }
 
-        internal override void OnTriggerEvents()
+        public override void OnTriggerEvents()
         {
             onRecognized?.Invoke(this);
         }
 
-        internal override bool OnTouchBegan(Array<UTouch> touches)
+        public override bool OnTouchBegan(Array<UTouch> touches)
         {
             if(state == EState.Ready)
             {
@@ -64,7 +64,7 @@ namespace KazegamesKit.Touch
             return false;
         }
 
-        internal override void OnTouchEnded(Array<UTouch> touches)
+        public override void OnTouchEnded(Array<UTouch> touches)
         {
             if(state == EState.Began && Time.time <= _touchBeganTime + _maxDurationForTaps)
             {

@@ -6,7 +6,7 @@ namespace KazegamesKit.Pool
     public class PrefabPoolHelper : MonoBehaviour
     {
         [SerializeField]
-        private PrefabPool[] pools;
+        private PrefabPool[] pools = null;
 
         private void Start()
         {

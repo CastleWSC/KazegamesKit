@@ -78,12 +78,12 @@ namespace KazegamesKit.Touch
             return true;
         }
 
-        internal override void OnTriggerEvents()
+        public override void OnTriggerEvents()
         {
             onRecognized?.Invoke(this);
         }
 
-        internal override bool OnTouchBegan(Array<UTouch> touches)
+        public override bool OnTouchBegan(Array<UTouch> touches)
         {
             if(state == EState.Ready)
             {
@@ -105,7 +105,7 @@ namespace KazegamesKit.Touch
             return false;
         }
 
-        internal override void OnTouchMoved(Array<UTouch> touches)
+        public override void OnTouchMoved(Array<UTouch> touches)
         {
             if(state == EState.Began)
             {
@@ -113,7 +113,7 @@ namespace KazegamesKit.Touch
             }
         }
 
-        internal override void OnTouchEnded(Array<UTouch> touches)
+        public override void OnTouchEnded(Array<UTouch> touches)
         {
             if(state == EState.Began)
             {
