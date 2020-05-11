@@ -40,8 +40,6 @@ namespace KazegamesKit.Touch
 
                 onBegin?.Invoke(this);
                 state = EState.Began;
-
-                return true;
             }
 
             return false;
