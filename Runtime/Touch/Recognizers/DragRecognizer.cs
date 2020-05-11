@@ -5,9 +5,9 @@ namespace KazegamesKit.Touch
 {
     public class DragRecognizer : GestureRecognizer
     {
-        public event Action<DragRecgnizer> onBegin;
-        public event Action<DragRecgnizer> onDrag;
-        public event Action<DragRecgnizer> onEnded;
+        public event Action<DragRecognizer> onBegin;
+        public event Action<DragRecognizer> onDrag;
+        public event Action<DragRecognizer> onEnded;
 
         private float _startTime;
 
@@ -17,7 +17,7 @@ namespace KazegamesKit.Touch
             get { return Time.realtimeSinceStartup - _startTime; }
         }
 
-        public DragRecgnizer()
+        public DragRecognizer()
         {
 
         }
