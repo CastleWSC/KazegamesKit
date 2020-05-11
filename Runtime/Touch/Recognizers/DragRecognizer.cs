@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace KazegamesKit.Touch
 {
-    public class DragRecgnizer : GestureRecognizer
+    public class DragRecognizer : GestureRecognizer
     {
         public event Action<DragRecgnizer> onBegin;
         public event Action<DragRecgnizer> onDrag;
