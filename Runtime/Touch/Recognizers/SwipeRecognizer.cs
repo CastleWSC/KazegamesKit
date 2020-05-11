@@ -97,7 +97,7 @@ namespace KazegamesKit.Touch
                     
                     _points.Push(touches[0].position);
 
-                    _startTime = Time.time;
+                    _startTime = Time.realtimeSinceStartup;
                     state = EState.Began;
                 }
             }

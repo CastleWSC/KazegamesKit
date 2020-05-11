@@ -53,7 +53,7 @@ namespace KazegamesKit.Touch
 
                 if(_tracking.Length == numOfTouchesRequired)
                 {
-                    _touchBeganTime = Time.time;
+                    _touchBeganTime = Time.realtimeSinceStartup;
                     _prformedTapsCount = 0;
                     state = EState.Began;
 
@@ -66,7 +66,7 @@ namespace KazegamesKit.Touch
 
         public override void OnTouchEnded(Array<UTouch> touches)
         {
-            if(state == EState.Began && Time.time <= _touchBeganTime + _maxDurationForTaps)
+            if(state == EState.Began && Time.realtimeSinceStartup <= _touchBeganTime + _maxDurationForTaps)
             {
                 ++_prformedTapsCount;
 
