@@ -31,15 +31,18 @@ namespace KazegamesKit.Touch
         {
             if(state == EState.Ready)
             {
-                UTouch touch = touches[0];
-                
-                _tracking.Push(touch);
+                for (int i = 0; i < touches.Length; i++)
+                    _tracking.Push(touches[i]);
 
-                _startTime = Time.realtimeSinceStartup;
-                position = touch.position;
+                if(_tracking.Length > 0)
+                {
+                    _startTime = Time.realtimeSinceStartup;
+                    position = PrimaryTouch.position;
 
-                onBegin?.Invoke(this);
-                state = EState.Began;
+                    onBegin?.Invoke(this);
+
+                    state = EState.Began;
+                }
             }
 
             return false;
@@ -49,7 +52,7 @@ namespace KazegamesKit.Touch
         {
             if(state == EState.Began)
             {
-                position = touches[0].position;
+                position = PrimaryTouch.position;
 
                 onDrag?.Invoke(this);
             }
@@ -59,7 +62,7 @@ namespace KazegamesKit.Touch
         {
             if(state == EState.Began)
             {
-                position = touches[0].position;
+                position = PrimaryTouch.position;
 
                 state = EState.Recognized;
             }

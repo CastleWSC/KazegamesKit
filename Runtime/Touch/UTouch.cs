@@ -19,7 +19,7 @@ namespace KazegamesKit.Touch
         private Vector2? _lastPosition;
         private double _lastClickTime;
         private double _multipleClickInterval = 0.2;
-        private double _dragPixels = 10;
+        public static double dragPixels = 10;
 #endif
 
 
@@ -84,7 +84,7 @@ namespace KazegamesKit.Touch
 
                     case TouchPhase.Stationary:
                     case TouchPhase.Moved:
-                        if (deltaPosition.magnitude < _dragPixels * _dragPixels)
+                        if (deltaPosition.magnitude < dragPixels)
                             phase = TouchPhase.Stationary;
 
                         _lastPosition = mousePosition;
