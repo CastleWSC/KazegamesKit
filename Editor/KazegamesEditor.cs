@@ -7,7 +7,7 @@ namespace KazegamesKit.Editor
 {
     public class KazegamesEditor 
     {
-        [MenuItem("Tools/Kazegames/Create Prototype Folders")]
+        [MenuItem("Tools/Kazegames/New Prototype Project")]
         static void CreatePrototypeFolders()
         {
             if(!AssetDatabase.IsValidFolder("Assets/_Prototype"))
