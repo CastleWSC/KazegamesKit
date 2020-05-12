@@ -24,7 +24,7 @@ namespace KazegamesKit.Pool
 
         public void Init()
         {
-            _pooling = new Stack<GameObject>((uint)instancesToPrelocate);
+            _pooling = new Stack<GameObject>(instancesToPrelocate);
             AllocateGameObjects(instancesToPrelocate);
         }
 

@@ -42,18 +42,18 @@ namespace KazegamesKit
             _data = null;
         }
 
-        public Array(uint n) : this()
+        public Array(int n) : this()
         {
-            _cap = (int)n;
+            _cap = n;
             if (_cap > 0)
             {
                 _data = new T[_cap];
             }
         }
 
-        public Array(uint n, T val) : this()
+        public Array(int n, T val) : this()
         {
-            _len = _cap = (int)n;
+            _len = _cap = n;
             if (_cap > 0)
             {
                 _data = new T[_cap];

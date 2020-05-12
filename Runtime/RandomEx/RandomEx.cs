@@ -47,17 +47,25 @@ namespace KazegamesKit
 
         public static Vector2 GetUnitVector2()
         {
-            return new Vector2(GetValue(), GetValue());
+            float theta = 2 * Mathf.PI * Random.value;
+            
+            return new Vector2(Mathf.Cos(theta), Mathf.Sin(theta));
         }
 
         public static Vector3 GetUnitVector3()
         {
-            return new Vector3(GetValue(), GetValue(), GetValue());
+            float theta = 2 * Mathf.PI * Random.value;
+            float phi = Mathf.PI * Random.value;
+
+            return new Vector3(
+                Mathf.Sin(phi) * Mathf.Cos(theta),
+                Mathf.Sin(phi) * Mathf.Sin(theta),
+                Mathf.Cos(phi));
         }
 
         public static Quaternion GetRotation()
         {
-            return Quaternion.Euler(GetUnitVector3());
+            return Quaternion.LookRotation(GetUnitVector3().normalized);
         }
     }
 }

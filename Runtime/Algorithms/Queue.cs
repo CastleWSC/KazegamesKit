@@ -15,7 +15,7 @@ namespace KazegamesKit
             _array = new Array<T>(10);
         }
 
-        public Queue(uint n)
+        public Queue(int n)
         {
             _array = new Array<T>(n);
         }

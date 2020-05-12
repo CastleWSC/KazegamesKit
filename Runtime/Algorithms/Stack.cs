@@ -14,7 +14,7 @@ namespace KazegamesKit
             _array = new Array<T>(10);
         }
 
-        public Stack(uint n)
+        public Stack(int n)
         {
             _array = new Array<T>(n);
         }
