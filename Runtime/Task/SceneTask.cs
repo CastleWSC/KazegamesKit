@@ -78,11 +78,26 @@ namespace KazegamesKit
 
                 if (_op == EOperation.Unload)
                 {
-                    _async = SceneManager.UnloadSceneAsync(BuildIndex > 0 ? BuildIndex : SceneName);
+                    if (BuildIndex > 0)
+                    {
+                        _async = SceneManager.UnloadSceneAsync(BuildIndex);
+                    }
+                    else
+                    {
+                        _async = SceneManager.UnloadSceneAsync(SceneName);
+                    }
+                    
                 }
                 else
                 {
-                    _async = SceneManager.LoadSceneAsync(BuildIndex > 0 ? BuildIndex : SceneName, _op == EOperation.LoadSingle ? LoadSceneMode.Single : LoadSceneMode.Additive);
+                    if (BuildIndex > 0)
+                    {
+                        _async = SceneManager.LoadSceneAsync(BuildIndex, _op == EOperation.LoadSingle ? LoadSceneMode.Single : LoadSceneMode.Additive);
+                    }
+                    else
+                    {
+                        _async = SceneManager.LoadSceneAsync(SceneName, _op == EOperation.LoadSingle ? LoadSceneMode.Single : LoadSceneMode.Additive);
+                    }
 
                     _async.allowSceneActivation = false;
                 }
