@@ -81,8 +81,6 @@ namespace KazegamesKit
                 {
                     _op = SceneManager.LoadSceneAsync(SceneName, Mode);
                 }
-
-                _op.allowSceneActivation = false;
             }
         }
 
