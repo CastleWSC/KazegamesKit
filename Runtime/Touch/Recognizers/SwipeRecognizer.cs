@@ -55,8 +55,8 @@ namespace KazegamesKit.Touch
             float idealDistance = Vector2.Distance(startPoint, endPoint);
             float idealDistanceCm = idealDistance / _screenPixelPerCm;
 
-            if (idealDistanceCm < _minDistanceCm)
-                return false;
+            //if (idealDistanceCm < _minDistanceCm)
+                //return false;
 
             ElpasedTime = Time.time - _startTime;
             SwipeVelocity = idealDistance / ElpasedTime;
