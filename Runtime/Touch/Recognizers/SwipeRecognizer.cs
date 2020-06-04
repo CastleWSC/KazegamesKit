@@ -33,7 +33,7 @@ namespace KazegamesKit.Touch
         public Vector2 startPoint { get { return _points.First; } }
         public Vector2 endPoint { get { return _points.Last; } }
 
-        public SwipeRecognizer() : this(2f)
+        public SwipeRecognizer() : this(0.5f)
         {
 
         }
@@ -55,8 +55,8 @@ namespace KazegamesKit.Touch
             float idealDistance = Vector2.Distance(startPoint, endPoint);
             float idealDistanceCm = idealDistance / _screenPixelPerCm;
 
-            //if (idealDistanceCm < _minDistanceCm)
-                //return false;
+            if (idealDistanceCm < _minDistanceCm)
+                return false;
 
             ElpasedTime = Time.time - _startTime;
             SwipeVelocity = idealDistance / ElpasedTime;
