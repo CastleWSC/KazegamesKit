@@ -36,7 +36,7 @@ namespace KazegamesKit.Editor
         }
 
 
-        [MenuItem("Tools/Kazegames/Physics Simulator")]
+        [MenuItem("Tools/Kazegames/Physics Simulator", false, 2)]
         static void CreateWindow()
         {
             GetWindow<PhyscisSimulator>("Physics Simulator");

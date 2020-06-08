@@ -61,10 +61,10 @@ namespace KazegamesKit.Editor
 
                             SpriteMetaData smd = new SpriteMetaData()
                             {
-                                alignment = (int)SpriteAlignment.BottomCenter,
+                                alignment = (int)KazegamesEditor.spriteAlignement,
                                 border = new Vector4(),
                                 name = node.Attributes["name"].Value,
-                                pivot = pivot,
+                                pivot = GetSpritePivot(KazegamesEditor.spriteAlignement),
                                 rect = new Rect(x, y, w, h)
                             };
 
@@ -99,6 +99,37 @@ namespace KazegamesKit.Editor
                 Debug.LogError($"[SpritesheetSlicerXML] XML format is invalide, root= {root.Name}.");
                 return;
             }
+        }
+
+        private static Vector2 GetSpritePivot(SpriteAlignment alignment)
+        {
+            switch (alignment)
+            {
+                case SpriteAlignment.Center:
+                    return new Vector2(.5f, .5f);
+
+                case SpriteAlignment.TopLeft:
+                    return new Vector2(0f, 1f);
+                case SpriteAlignment.TopCenter:
+                    return new Vector2(.5f, 1f);
+                case SpriteAlignment.TopRight:
+                    return new Vector2(1f, 1f);
+
+                case SpriteAlignment.LeftCenter:
+                    return new Vector2(0f, .5f);
+                case SpriteAlignment.RightCenter:
+                    return new Vector2(1f, .5f);
+
+                case SpriteAlignment.BottomLeft:
+                    return new Vector2(0f, 0f);
+                case SpriteAlignment.BottomCenter:
+                    return new Vector2(.5f, 0f);
+                case SpriteAlignment.BottomRight:
+                    return new Vector2(1f, 0f);
+
+            }
+
+            return KazegamesEditor.spritePivot;
         }
     }
 }

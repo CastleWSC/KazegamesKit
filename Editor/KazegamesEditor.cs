@@ -5,9 +5,9 @@ using System.IO;
 
 namespace KazegamesKit.Editor
 {
-    public class KazegamesEditor 
+    public class KazegamesEditor : EditorWindow
     {
-        [MenuItem("Tools/Kazegames/New Prototype Project")]
+        [MenuItem("Tools/Kazegames/New Prototype Project", false, 1)]
         static void CreatePrototypeFolders()
         {
             if(!AssetDatabase.IsValidFolder("Assets/_Prototype"))
@@ -32,6 +32,29 @@ namespace KazegamesKit.Editor
 
                 AssetDatabase.Refresh();
             }
+        }
+
+
+        [MenuItem("Tools/Kazegames/Kazegames Kit", false, 0)]
+        static void CreateWindow()
+        {
+            GetWindow<KazegamesEditor>("Kazegames Editor");
+        }
+
+
+        public static SpriteAlignment spriteAlignement = SpriteAlignment.Center;
+        public static Vector2 spritePivot = new Vector2(0.5f, 0.5f);
+
+
+        private void OnGUI()
+        {
+            EditorGUILayout.BeginVertical("box");
+
+            EditorGUILayout.LabelField("Spritesheet Slicer");
+            spriteAlignement = (SpriteAlignment)EditorGUILayout.EnumPopup("Sprite Alignement", spriteAlignement);
+            spritePivot = EditorGUILayout.Vector2Field("Sprite Pivot", spritePivot);
+
+            EditorGUILayout.EndVertical();
         }
     }
 }
