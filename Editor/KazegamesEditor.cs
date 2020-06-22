@@ -14,6 +14,7 @@ namespace KazegamesKit.Editor
             {
                 string[] subFolders = new string[]
                 {
+                    "Animations",
                     "Scripts",
                     "Scenes",
                     "Textures",
