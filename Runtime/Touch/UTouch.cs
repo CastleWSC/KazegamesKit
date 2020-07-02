@@ -25,7 +25,11 @@ namespace KazegamesKit.Touch
 
         public UTouch(int id)
         {
-            Id = id;
+#if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBGL
+            Id = -1;
+#else
+            
+#endif
             phase = TouchPhase.Ended;
         }
 
